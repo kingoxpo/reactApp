@@ -1,13 +1,41 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+import { useState } from "react/cjs/react.development";
 
-function App() {
+export default function App() {
+  const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState([]);
+  const onChange = event => setTodo(event.target.value);
+  const onSubmit = e => {
+    e.preventDefault();
+    if (todo === "") {
+      return;
+    }
+    setTodos(currentArr => {
+      const newArr = [todo, ...currentArr];
+      console.log(newArr);
+      console.log(newArr.map((item, index) => <li key={index}>{item}</li>));
+      return newArr;
+    });
+    setTodo("");
+  };
+
   return (
     <div>
-      <h1 className={styles.title}>Welcome React</h1>
-      <Button text={"Send"} />
+      <h1>총 메모 개수는 {todos.length}개 입니다.</h1>
+      <form onSubmit={onSubmit}>
+        <input
+          onChange={onChange}
+          value={todo}
+          type="text"
+          placeholder="wirte todo"
+        ></input>
+        <button>Save</button>
+      </form>
+      <hr />
+      <ul>
+        {todos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
-
-export default App;
