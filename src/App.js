@@ -1,54 +1,38 @@
 import { useEffect, useState } from "react/cjs/react.development";
-
 export default function App() {
-  const [loding, setLoding] = useState(true);
-  const [coins, setCoins] = useState([]);
-  const [userMoney, setUserMoney] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
+
+  const getMovies = async () => {
+    const json = await (
+      await fetch(
+        `https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=year`
+      )
+    ).json();
+
+    setMovies(json.data.movies);
+    setLoading(false);
+  };
 
   useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers")
-      .then(response => response.json())
-      .then(json => {
-        setCoins(json);
-        setLoding(false);
-      });
+    getMovies();
   }, []);
+  console.log(movies);
 
-  // const inputPriceFormat = str => {
-  //   const comma = str => {
-  //     str = String(str);
-  //     return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  //   };
-  //   const uncomma = str => {
-  //     str = String(str);
-  //     return str.replace(/[^\d]+/g, "");
-  //   };
-  //   return comma(uncomma(str));
-  // };
   return (
     <div>
-      <h1>Welcome to the coin world {loding ? "" : `(${coins.length})`}</h1>
-      <h2>How much do you have?</h2>
-      <input
-        // onChange={e => setUserMoney(inputPriceFormat(e.target.value))}
-        onChange={e => setUserMoney(e.target.value)}
-        type="text"
-        value={userMoney}
-        placeholder="Please write your KRW"
-      />
-      <label>원(₩)</label>
-      <hr />
-      {loding ? (
+      <h1>Welcome to the Movie World</h1>
+      {loading ? (
         <strong>Loading...</strong>
       ) : (
-        <select>
-          {coins.map((coin, index) => (
-            <option key={index}>
-              {coin.name} ({coin.symbol}):{" "}
-              {userMoney / 1205.6 / coin.quotes.USD.price} {coin.symbol}
-            </option>
+        <div>
+          {movies.map(movie => (
+            <div key={movie.id}>
+              {movie.title}
+              <img src={movie.small_cover_image} alt="img" />
+            </div>
           ))}
-        </select>
+        </div>
       )}
     </div>
   );
