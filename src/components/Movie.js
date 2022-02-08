@@ -1,24 +1,24 @@
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from "./Movie.module.css";
 
 export default function Movie({ id, coverImg, title, sum, gen, year, rating }) {
   return (
-    <div>
-      <img src={coverImg} alt={title} />
-      <h2>
+    <div className={styles.movie}>
+      <img src={coverImg} alt={title} className={styles.movie_img} />
+      <h2 className={styles.movie_title}>
         <Link to={`/movie/${id}`}> {title}</Link>
       </h2>
-      <p>{sum}</p>
+      <h3 className={styles.movie_year}>
+        개봉연도: {year}년 | 평점: {rating}
+      </h3>
+      <p>{sum.length > 235 ? `${sum.slice(0, 235)}...` : sum}</p>
 
-      <ul>
+      <ul className={styles.movie_genres}>
         {gen?.map(g => (
           <li key={g}>{g}</li>
         ))}
       </ul>
-      <p>
-        개봉연도: {year}년 | 평점: {rating}
-      </p>
-
       <hr />
     </div>
   );
