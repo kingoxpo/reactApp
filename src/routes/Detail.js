@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react/cjs/react.development";
-import detailMovie from "../components/detailMovie";
+import DetailMovie from "../components/DetailMovie";
 
 export default function Detail() {
   const { id } = useParams();
@@ -28,13 +28,11 @@ export default function Detail() {
         <strong>Loading...</strong>
       ) : (
         <div>
-          {movie.map(mov => (
-            <detailMovie
-              covImg={mov.large_cover_image}
-              title={mov.title}
-              sum={mov.summary}
-            />
-          ))}
+          <DetailMovie
+            img={movie.large_cover_image}
+            title={movie.title}
+            desc={movie.description_full}
+          />
         </div>
       )}
     </div>

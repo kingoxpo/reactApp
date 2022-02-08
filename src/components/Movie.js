@@ -18,6 +18,7 @@ export default function Movie({ id, coverImg, title, sum, gen, year, rating }) {
       <p>
         개봉연도: {year}년 | 평점: {rating}
       </p>
+
       <hr />
     </div>
   );
