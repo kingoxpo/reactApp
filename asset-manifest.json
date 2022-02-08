@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/reactApp.git%20/static/js/main.094a573e.js",
-    "index.html": "/reactApp.git%20/index.html",
-    "main.094a573e.js.map": "/reactApp.git%20/static/js/main.094a573e.js.map"
+    "main.js": "/reactApp%20/static/js/main.8d2f418b.js",
+    "index.html": "/reactApp%20/index.html",
+    "main.8d2f418b.js.map": "/reactApp%20/static/js/main.8d2f418b.js.map"
   },
   "entrypoints": [
-    "static/js/main.094a573e.js"
+    "static/js/main.8d2f418b.js"
   ]
 }
