@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import DetailMovie from "../components/DetailMovie";
 
@@ -23,7 +23,9 @@ export default function Detail() {
 
   return (
     <div>
-      <h1>Movie Detail</h1>
+      <h1>
+        <Link to={"/"}>Home</Link>
+      </h1>
       {loading ? (
         <strong>Loading...</strong>
       ) : (
