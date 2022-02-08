@@ -6,8 +6,8 @@ export default function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <div>
         <Routes>
-          <Route path="/movie/:id" element={<Detail />}></Route>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/movie/:id" element={<Detail />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </div>
     </Router>
