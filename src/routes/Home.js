@@ -12,8 +12,8 @@ export default function Home() {
           <div className={styles.slide__box}>
             <h3 className={styles.title}>
               <Link to={`/page/${slide.path}/1`}>
-                <i class="fas fa-external-link-alt"></i>
                 <span>{slide.title} Movie</span>
+                <i class="fas fa-external-link-alt"></i>
               </Link>
             </h3>
             <Slide
