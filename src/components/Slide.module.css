@@ -21,7 +21,7 @@
   background-color: transparent;
   border: none;
   outline: none;
-  color: #00d2fc;
+  color: #91a1ff;
   opacity: 0.8;
   font-size: 44px;
 
@@ -35,16 +35,15 @@
 }
 
 .left {
-  text-shadow: 3px 2px 0 #009efa;
-
+  text-shadow: 3px 2px 0 #6452ca;
   position: absolute;
   top: calc(50% - 22px);
-  left: 80px;
+  left: 275px;
 }
 
 .right {
-  text-shadow: -3px 2px 0 #009efa;
+  text-shadow: -3px 2px 0 #5264ca;
   position: absolute;
   top: calc(50% - 22px);
-  right: 80px;
+  right: 275px;
 }

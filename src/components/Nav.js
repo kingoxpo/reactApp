@@ -51,7 +51,7 @@ export default function Nav() {
         style={
           changing
             ? {
-                backgroundColor: "#845EC2",
+                backgroundColor: "#ffffff",
                 boxShadow:
                   "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
               }
@@ -60,11 +60,12 @@ export default function Nav() {
         className={styles.container}
       >
         <div className={styles.title}>
-          <Link to="/react-movie" onClick={() => setFocusPath("")}>
-            <i class="fab fa-neos"></i>
-            <strong>AFLIX</strong>
+          <Link to="/" onClick={() => setFocusPath("")}>
+            <i class="fab fa-buysellads"></i>
+            <strong>FLIX</strong>
           </Link>
         </div>
+
         <ul className={styles.option__list}>
           {navList.map(({ title, path }) => {
             return (
@@ -76,7 +77,7 @@ export default function Nav() {
                     focusPath !== path
                       ? null
                       : {
-                          color: "#dcb0ff",
+                          color: "#4156ce",
                         }
                   }
                 >
@@ -86,6 +87,7 @@ export default function Nav() {
             );
           })}
         </ul>
+
         <ul className={styles.icon__list}>
           <li>
             <a

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useCallback } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Point from "../components/Point";
 import styles from "./Home.module.css";
 import Loading from "../components/Loading";
@@ -17,7 +16,7 @@ export default function Detail() {
         setDatas(json.data.movie);
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   console.log(datas);
 

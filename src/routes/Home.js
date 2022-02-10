@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import navList from "../atom/NavList";
-import Movie from "../components/Movie";
-import Slide from "../components/Slide";
 import styles from "./Home.module.css";
+import Slide from "../components/Slide";
+import navList from "../atom/NavList";
 
 export default function Home() {
   return (

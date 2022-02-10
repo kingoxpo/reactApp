@@ -1,7 +1,7 @@
 :root {
-  --green-color-3: #41227f;
-  --green-color-2: #dcb0ff;
-  --green-color-1: #faccff;
+  --green-color-3: #49559c;
+  --green-color-2: #4156ce;
+  --green-color-1: #6ca4f8;
 }
 .container {
   display: flex;

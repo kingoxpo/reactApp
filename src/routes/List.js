@@ -62,7 +62,7 @@ export default function List() {
                   <Link
                     to={`/page/${detail}/${listNum}`}
                     onClick={() => setReloading(true)}
-                    className={listNum == num ? styles.focusing : null}
+                    className={listNum === num ? styles.focusing : null}
                   >
                     {listNum}
                   </Link>

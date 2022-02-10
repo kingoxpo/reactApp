@@ -48,13 +48,14 @@ export default function Slide({ ytsApi }) {
                 key={movie.id}
                 id={movie.id}
                 year={movie.year}
+                rating={movie.rating}
                 coverImg={movie.medium_cover_image}
                 title={movie.title}
                 summary={""}
                 genres={movie.genres}
                 movie_style={{
                   minWidth: "350px",
-                  height: "300px",
+                  height: "350px",
                 }}
               />
             ))}
@@ -64,10 +65,10 @@ export default function Slide({ ytsApi }) {
       {loading ? null : (
         <div>
           <button class={styles.left} onClick={onClickL}>
-            <i class="fas fa-caret-square-left"></i>
+            <i class="far fa-caret-square-left"></i>
           </button>
           <button class={styles.right} onClick={onClickR}>
-            <i class="fas fa-caret-square-right"></i>
+            <i class="far fa-caret-square-right"></i>
           </button>
         </div>
       )}
